@@ -7,9 +7,9 @@ const CartContainer = () => {
 
     const dispatch = useDispatch()
 
-    const { cartItems, total, amount } = useSelector(store => store.cart)
+    const { cartItems, totalCost, totalAmount } = useSelector(store => store.cart)
 
-    if (amount < 1){
+    if (totalAmount < 1){
         return (
             <section className='cart'>
                 <header>
@@ -32,7 +32,7 @@ const CartContainer = () => {
                 <hr/>
                 <div className='cart-total'>
                     <h4> 
-                        total <span> ${total} </span>
+                        total <span> ${totalCost.toFixed(2)} </span>
                     </h4>
                 </div>
                 <button className='btn clear-btn' onClick={() => dispatch(clearCart())}> clear cart </button>
