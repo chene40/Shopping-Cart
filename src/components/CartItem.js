@@ -14,7 +14,7 @@ const CartItem = ({id, img, title, price, amount}) => {
 
   const decrease = () => {
     if (amount === 1){ 
-      dispatch(removeItem(id)) 
+      remove()
       return
     }
     dispatch(decreaseAmount({id}))
